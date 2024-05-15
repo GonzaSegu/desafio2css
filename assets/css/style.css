@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --bg: blue;
+    --primary: #008170;
+    --border: #ccc;
+    --text: #000;
+    --white: #fff;
+    --gris: rgb(224, 224, 224);
+    --font: "Open Sans", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+span{
+    color:red;
+    
+}
+body {
+    font-family: var(--font);
+    color: var(--text);
+}
+
+a {
+    text-decoration: none;
+}
+
+#root {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 10% 5fr 10%;
+    grid-template-areas: 
+        'nav nav'
+        'header header'
+        'aside related'
+        'footer footer';
+}
+
+.encabezado {
+    background: var(--bg);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    grid-area: nav;
+    height: 50px;
+}
+
+aside {
+    border-left: 1px solid var(--border);
+    padding: 1rem 1rem;
+    grid-area: aside;
+    background-color: var(--gris);
+}
+
+aside .widget {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+aside .widget h3 {
+    margin-bottom: 0.5rem;
+}
+
+aside .widget ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+aside .widget a {
+    color: var(--text);
+    padding: 0 0 0 1rem;
+}
+
+aside .widget a:hover {
+    text-decoration: underline;
+}
+
+.seccion_cards {
+    padding: 1rem 1rem;
+    grid-area: related; 
+}
+
+.grilla_card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /*es = 1fr 1fr 1fr */
+    gap: 1rem;
+}
+
+.seccion_cards .card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion_cards .card a {
+    color: var(--text);
+}
+
+.seccion_cards .card a:hover {
+    color: var(--primary);
+}
+
+.seccion_cards .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.btn {
+    background-color: #ce2020;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--bg);
+    color: var(--white);
+    height: 50px;
+}
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    /* border-top: 1px solid var(--border); */
+}
